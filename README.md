@@ -44,8 +44,8 @@ between them is what a city gains by collecting its own training data.
 ### Training target
 
 Milan is modelled twice, against CLMS and against GHS-BUILT-S. The two measure
-different things — CLMS sealed surface including roads, GHSL roofed built-up
-area excluding them — so the comparison separates what the method achieves from
+different things, CLMS sealed surface including roads while GHSL roofed built-up
+area excluding them. so the comparison separates what the method achieves from
 what the reference it learned from dictates.
 
 Everything is checked twice: against the same reference the models trained on,
