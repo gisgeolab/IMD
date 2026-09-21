@@ -7,7 +7,7 @@ Maria Antonia Brovelli, Matej Žgela, Keerthana Kirubakaran, Xiao Tan
 · Politecnico di Milano
 
 Impervious surface density (IMD) is the proportion of a pixel covered by
-impervious material — buildings, roads, pavement. Mapping it at 10 m for Milan,
+impervious material such as buildings, roads, pavement. Mapping it at 10 m for Milan,
 Hanoi and Ho Chi Minh City in 2018.
 
 Hanoi and HCMC have no IMD product at all. The maps are needed to support local
@@ -24,7 +24,7 @@ Italy–Vietnam bilateral project.
 ### Predictors
 
 AlphaEarth is ready to use: one global annual product, no compositing to get
-right. Sentinel-2 costs more work — searching scenes, screening cloud, building
+right. Sentinel-2 costs more work for searching scenes, screening cloud, building
 a composite per city. Four predictor sets are compared on Milan under identical
 conditions, so the only thing that varies is the input:
 
