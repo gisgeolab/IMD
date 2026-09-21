@@ -11,8 +11,7 @@ impervious material such as buildings, roads, pavement. Mapping it at 10 m for M
 Hanoi and Ho Chi Minh City in 2018.
 
 Hanoi and HCMC have no IMD product at all. The maps are needed to support local
-climate zone mapping and urban heat island analysis in the **LCZ-UHI-GEO**
-Italy–Vietnam bilateral project.
+climate zone mapping and urban heat island analysis in the **LCZ-UHI-GEO** project.
 
 ## Contributions
 
