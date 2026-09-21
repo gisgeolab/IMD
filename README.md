@@ -167,7 +167,7 @@ Predicted rasters and the project code are published at
 
 We acknowledge Copernicus/EEA (CLMS), EC JRC (GHS-BUILT-S), ESA (Sentinel-2)
 and Google (AlphaEarth) for the satellite data and reference products, and
-Ammar Mughees for the EarthLabel annotation tool.
+Mohammad Ammar Mughees for the EarthLabel annotation tool.
 
 This research was conducted as part of the **LCZ-UHI-GEO** Italy–Vietnam
 bilateral project and **Space it up!**, funded and supported by the Italian
