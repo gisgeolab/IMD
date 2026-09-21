@@ -47,10 +47,7 @@ different things, CLMS sealed surface including roads while GHSL roofed built-up
 area excluding them. so the comparison separates what the method achieves from
 what the reference it learned from dictates.
 
-Everything is checked twice: against the same reference the models trained on,
-and against 450 independently photo-interpreted **EarthLabel** plots per city,
-which no model ever saw. The two are never merged — a model can beat its own
-training reference and still be wrong about the ground.
+Everything is evaluated against 450 independently photo-interpreted **EarthLabel** plots per city, which no model ever saw during training.
 
 ## What is here
 
