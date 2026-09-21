@@ -96,8 +96,7 @@ report/   report.tex, report.pdf, IMD_Mapping.pptx
 
 > **Code only.** `data/` and `output/` are around 5 GB of rasters, models and
 > sample points — regenerable by re-running the notebooks, and the GeoTIFFs
-> exceed GitHub's file size limit. Neither is in this repository, and neither
-> are the report's own sources beyond `report.tex`.
+> exceed GitHub's file size limit. 
 
 ## Method in brief
 
