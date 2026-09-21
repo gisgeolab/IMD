@@ -1,0 +1,157 @@
+# ── Data & outputs (code-only repository) ─────────────────────────────────────
+# Everything here is either too large for GitHub or fully regenerable by
+# re-running the notebooks against Google Earth Engine.
+
+# Rasters -- CLMS IMD ~229 MB each, predicted maps 157-203 MB, GHSL 42-51 MB.
+# All exceed GitHub's 100 MB hard limit.
+*.tif
+*.tiff
+*.tif.aux.xml
+*.ovr
+
+# Trained models (RF ~21 MB) -- regenerable, and joblib is version-fragile
+*.joblib
+*.pkl
+*.h5
+
+# Sample points, metrics tables, figures
+*.gpkg
+*.gpkg-shm
+*.gpkg-wal
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qmd
+*.csv
+*.png
+*.jpg
+*.pdf
+
+# ── Run outputs ───────────────────────────────────────────────────────────────
+# Every notebook writes under output/, laid out city / dataset / predictor:
+#
+#   output/milan/{clms,ghsl}/{embedding,median,stack,percentile}/
+#   output/{hanoi,hcmc}/{embedding,median}/   per-city rasters and samples
+#   output/transfer/{embedding,median}/       the two-city comparison files
+#   output/milan/validation/                  photo-interpreted validation
+#
+# All of it is regenerable by re-running the notebooks against Earth Engine,
+# and the predicted rasters exceed GitHub's 100 MB limit on their own.
+output/
+
+# ── Input data ────────────────────────────────────────────────────────────────
+# data/ holds only original inputs now: the CLMS and GHSL reference rasters,
+# the Vietnam IMD rasters, the sample points and the photo-interpreted CSVs.
+# None of it is ours to redistribute and none of it fits in the repository.
+data/
+
+# ── report/ : only the three deliverables ────────────────────────────────────
+# The repository carries what gets handed over and nothing that builds it.
+# Three files, and they are the ONLY things tracked under report/:
+#
+#   report/report.tex        the source
+#   report/report.pdf        the built report
+#   report/IMD_Mapping.pptx  the presentation
+#
+# Everything else under report/ stays on disk and keeps working -- it is
+# ignored, not deleted:
+#
+#   facts/         FACTS.md, EXPERIMENT_MAP.md, FIGURES.md, FIGURE_GAPS.md,
+#                  OUTLINE.md -- the written record
+#   code/          the scripts that build the fact base, the figures and the
+#                  decks, and the auditor
+#   figs/          every cited figure
+#   presentation/  deck sources
+#   build/         LaTeX auxiliaries
+#   refs.bib       the bibliography
+#
+# WHAT THIS COSTS, stated plainly so nobody rediscovers it the hard way.
+# FACTS.md and the figures are regenerable -- collect_metrics.py and
+# make_report_figs.py rebuild them from output/. These are NOT:
+#
+#   EXPERIMENT_MAP.md  hand-written provenance and design decisions
+#   OUTLINE.md         hand-written section plan and figure assignments
+#   report/code/*.py   the only way to rebuild FACTS.md and the figures
+#   refs.bib           hand-maintained bibliography
+#
+# None of those can be recovered from anything else in the repository. They
+# exist on this disk alone, and a fresh clone will not have them. They ARE in
+# git history up to the commit that untracked them -- recover with
+# `git show <commit>:report/facts/EXPERIMENT_MAP.md` -- but nothing after that
+# point is recorded. Back them up outside git, or track them again.
+#
+# Also note: report.tex alone does not compile. It needs refs.bib and figs/,
+# both ignored here, so the repository no longer holds a buildable report.
+#
+# Written as `report/*` rather than `report/`: git does not descend into an
+# excluded DIRECTORY, so a bare `report/` would make the three negations below
+# unreachable and nothing under report/ would be tracked at all. The `*` form
+# excludes the entries instead, which leaves the negations able to re-include
+# their three files.
+report/*
+!report/report.tex
+!report/report.pdf
+!report/IMD_Mapping.pptx
+
+docs/
+
+# ── CLAUDE.md ────────────────────────────────────────────────────────────────
+# Project instructions for Claude Code. Ignored at the user's request: it is
+# working notes rather than a deliverable. Same caveat as report/facts/ -- it
+# is hand-written, nothing regenerates it, and a fresh clone will not have it.
+# Earlier versions are recoverable from git history up to the commit that
+# untracked it.
+CLAUDE.md
+
+# ── Secrets & credentials ─────────────────────────────────────────────────────
+# Earth Engine / Google Cloud service-account keys must never be committed.
+*.json
+!requirements*.json
+.env
+.env.*
+credentials/
+*-service-account*
+.config/earthengine/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+profile_default/
+ipython_config.py
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+install_log.txt
+*.log
+
+# ── OS / editor ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+# PowerPoint lock files, written while a deck is open and meaningless once it
+# is closed. Anchored to the repo root would miss them; they sit beside the
+# deck.
+~$*
+
+# Everything under report/ -- the deck sources, the LaTeX auxiliaries, the
+# .bbl and .blg BibTeX writes beside report.tex -- is already covered by the
+# `report/` rule above, which keeps only the three deliverables.
