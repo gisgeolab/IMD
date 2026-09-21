@@ -31,8 +31,8 @@ conditions, so the only thing that varies is the input:
 |---|---|
 | AlphaEarth embeddings | 64 learned bands from [Google Satellite Embedding V1](https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL), encoding a year of Sentinel-1/2, Landsat and more per 10 m pixel |
 | Sentinel-2 median | 10 reflectance bands, per-pixel median of cloud-free 2018 dates |
-| Sentinel-2 stack | the same dates kept as separate bands |
 | Sentinel-2 percentile | five percentiles per band, capturing within-year variation |
+| Sentinel-2 stack | Four near-cloud-free dates , evenly spaced from March to October. kept as separate bands |
 
 ### Transfer
 
