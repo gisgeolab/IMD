@@ -99,17 +99,17 @@ report/   report.tex, report.pdf, IMD_Mapping.pptx
 **Sampling.** 3 500 points per city — 500 in each of seven density classes, so
 sparse classes are not swamped by the dominant one. Sampled separately for CLMS
 and GHSL, since the two products differ pixel by pixel. Roughly 70/30 train and
-test: 2 449 train, 1 014 test.
+test: 2449 train, 1014 test.
 
 **Spatial cross-validation.** Ordinary random CV leaks between neighbouring
 pixels and reports accuracy that does not survive contact with new ground.
-Training points are grouped into blocks of 500 m, 1 km and 2 km, whole blocks
-go to five folds, and a 250 m buffer drops validation points sitting too close
+Training points are grouped into blocks of 500m, 1000m and 2000m, whole blocks
+go to five folds, and a 250m buffer drops validation points sitting too close
 to a training point. The locked train/test split is scored exactly once.
 
 **Model.** Random forest — 500 trees, depth 30, seed 42 — tuned in scikit-learn
 under those spatial folds, then retrained server-side in Earth Engine and
-exported as a 10 m raster.
+exported as a 10m raster.
 
 **Validation.** Three measures against the EarthLabel plots: R², Cohen's κ, and
 quadratic weighted κ. Each plot is one 10 m pixel subdivided into nine
@@ -166,5 +166,5 @@ and Google (AlphaEarth) for the satellite data and reference products, and
 Mohammad Ammar Mughees for the EarthLabel annotation tool.
 
 This research was conducted as part of the **LCZ-UHI-GEO** Italy–Vietnam
-bilateral project and **Space it up!**, funded and supported by the Italian
+bilateral  and **Space it up!** projects, funded and supported by the Italian
 Space Agency (ASI) and the Vietnam National Space Center (VNSC).
