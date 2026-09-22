@@ -96,7 +96,7 @@ report/   report.tex, report.pdf, IMD_Mapping.pptx
 
 ## Method in brief
 
-**Sampling.** 3 500 points per city — 500 in each of seven density classes, so
+**Sampling.** 3500 points per city as of 500 in each of seven density classes, so
 sparse classes are not swamped by the dominant one. Sampled separately for CLMS
 and GHSL, since the two products differ pixel by pixel. Roughly 70/30 train and
 test: 2449 train, 1014 test.
