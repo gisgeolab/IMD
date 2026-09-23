@@ -158,6 +158,7 @@ under one city hides the other city's results inside it.
 
 ## Method in brief
 
+<<<<<<< HEAD
 **Sampling.** 500 points in each of the seven density classes, giving a
 balanced 3500, so sparse classes are not swamped by the dominant one. Drawn
 separately for CLMS and GHSL, since the two products differ pixel by pixel.
@@ -173,6 +174,22 @@ random splitting does not.
 blocks and the blocks assigned at random to five folds. Tuning repeats at
 three block sizes (500m, 1000m and 2000m) and the setting with the lowest
 mean RMSE is selected. For AlphaEarth on Milan that was 1000m.
+=======
+**Sampling.** 3500 points per city as of 500 in each of seven density classes, so
+sparse classes are not swamped by the dominant one. Sampled separately for CLMS
+and GHSL, since the two products differ pixel by pixel. Roughly 70/30 train and
+test: 2449 train, 1014 test.
+
+**Spatial cross-validation.** Ordinary random CV leaks between neighbouring
+pixels and reports accuracy that does not survive contact with new ground.
+Training points are grouped into blocks of 500m, 1000m and 2000m, whole blocks
+go to five folds, and a 250m buffer drops validation points sitting too close
+to a training point. The locked train/test split is scored exactly once.
+
+**Model.** Random forest — 500 trees, depth 30, seed 42 — tuned in scikit-learn
+under those spatial folds, then retrained server-side in Earth Engine and
+exported as a 10m raster.
+>>>>>>> 9515b055b10c5644a8bc06837cbffa1d2d4d84a9
 
 **Model.** Random forest, tuned in scikit-learn under spatial folds,
 then retrained server-side in Earth Engine and exported as a 10m raster. The
@@ -255,5 +272,9 @@ and Google (AlphaEarth) for the satellite data and reference products, and
 Mohammad Ammar Mughees for the EarthLabel annotation tool.
 
 This research was conducted as part of the **LCZ-UHI-GEO** Italy–Vietnam
+<<<<<<< HEAD
 bilateral and **Space it up!** projects, funded and supported by the Italian
+=======
+bilateral  and **Space it up!** projects, funded and supported by the Italian
+>>>>>>> 9515b055b10c5644a8bc06837cbffa1d2d4d84a9
 Space Agency (ASI) and the Vietnam National Space Center (VNSC).
